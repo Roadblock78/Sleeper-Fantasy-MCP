@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: sleeper-fantasy-mcp
+    runtime: docker
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: SLEEPER_USER_ID
+        value: "982607912881209344"
+      - key: SLEEPER_SEASON
+        value: "2026"
