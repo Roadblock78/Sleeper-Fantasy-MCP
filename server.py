@@ -2,8 +2,8 @@ import os
 import time
 from typing import Any
 
-import httpx
 from mcp.server.fastmcp import FastMCP
+from mcp.server.transport_security import TransportSecuritySettings
 
 SLEEPER_BASE = "https://api.sleeper.app/v1"
 DEFAULT_USER_ID = os.getenv("SLEEPER_USER_ID", "982607912881209344")
@@ -13,6 +13,9 @@ REQUEST_TIMEOUT = float(os.getenv("HTTP_TIMEOUT_SECONDS", "20"))
 mcp = FastMCP(
     "Sleeper Fantasy NFL",
     json_response=True,
+    transport_security=TransportSecuritySettings(
+        enable_dns_rebinding_protection=False
+    ),
     instructions=(
         "Read-only access to Sleeper NFL fantasy data. "
         "Default user_id is the owner's configured Sleeper account. "
