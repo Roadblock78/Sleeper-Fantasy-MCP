@@ -268,4 +268,6 @@ async def get_league_snapshot(league_id: str) -> dict[str, Any]:
 
 
 if __name__ == "__main__":
+    mcp.settings.host = "0.0.0.0"
+    mcp.settings.port = int(os.getenv("PORT", "8000"))
     mcp.run(transport="streamable-http")
