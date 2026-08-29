@@ -2,6 +2,7 @@ import os
 import time
 from typing import Any
 
+import httpx
 from mcp.server.fastmcp import FastMCP
 from mcp.server.transport_security import TransportSecuritySettings
 
